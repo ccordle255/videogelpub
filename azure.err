@@ -1,0 +1,27 @@
+Tue Apr 01 2014 04:06:40 GMT-0400 (Eastern Daylight Time):
+{ [Error: EPERM, open 'c:\Users\.azure\spaces.146ce802-aa85-41ef-a0ed-46a25e64fbcd.json']
+  stack: [Getter/Setter],
+  errno: 50,
+  code: 'EPERM',
+  path: 'c:\\Users\\.azure\\spaces.146ce802-aa85-41ef-a0ed-46a25e64fbcd.json',
+  __frame: 
+   { name: 'getSpaces__5',
+     line: 390,
+     file: 'c:\\Users\\Chris\\AppData\\Roaming\\npm\\node_modules\\azure-cli\\lib\\commands\\websites\\websitesclient._js',
+     prev: 
+      { name: 'ensureSpaces__19',
+        line: 838,
+        file: 'c:\\Users\\Chris\\AppData\\Roaming\\npm\\node_modules\\azure-cli\\lib\\commands\\websites\\websitesclient._js',
+        prev: [Object],
+        active: false,
+        offset: 9,
+        col: 25 },
+     active: false,
+     offset: 9,
+     col: 6 },
+  rawStack: [Getter] }
+Error: EPERM, open 'c:\Users\.azure\spaces.146ce802-aa85-41ef-a0ed-46a25e64fbcd.json'
+    at getSpaces__5 (c:\Users\Chris\AppData\Roaming\npm\node_modules\azure-cli\lib\commands\websites\websitesclient._js:399:6)
+    at ensureSpaces__19 (c:\Users\Chris\AppData\Roaming\npm\node_modules\azure-cli\lib\commands\websites\websitesclient._js:847:25)
+    at __1 (c:\Users\Chris\AppData\Roaming\npm\node_modules\azure-cli\lib\commands\site._js:71:10)
+
