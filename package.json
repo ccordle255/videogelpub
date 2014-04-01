@@ -10,7 +10,8 @@
     "passport-local": "~0.1.6",
     "ejs": "~0.8.4",
     "oauth": "^0.9.11",
-    "passport-smugmug": "^0.1.2"
+    "passport-smugmug": "^0.1.2",
+    "request": "^2.34.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
