@@ -1,0 +1,49 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+<div class="create">
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Select Thumbnails</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2">
+    <p>Select from: </p>
+  </div>
+  <div class="col-xs-2">
+    <p>. .</p>
+  </div>
+  <div class="col-xs-8">
+    <p>Click here for help</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4">
+    <p>{{album.length}}</p>
+    <p>{{selectedCount}} photos selected</p>
+  </div>
+  <div class="col-xs-4">
+    <p>Viewing ...</p>
+  </div>
+  <div class="col-xs-4">
+    <p>Finished selecting</p>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-xs-6 col-sm-4 col-md-4 col-lg-3" ng-repeat="image in images">
+	  <div>
+	  	<div class="row">
+	  		<div class="col-xs-12" ng-class="{ 'selected' : image.selected }" ng-click="thumbClicked()">
+	      	<img ng-src="{{image.ThumbURL}}" />
+      	</div>
+      	<div class="col-xs-12">
+      		<p>{{image.FileName}}</p>
+      		<p>{{image.Keywords}}</p>
+    		</div>
+	  	</div>
+		</div>
+	</div>
+</div>

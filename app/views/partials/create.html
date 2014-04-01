@@ -1,0 +1,50 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+<div class="create">
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Select Albums</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2">
+    <p>Select from: </p>
+  </div>
+  <div class="col-xs-2">
+    <p>. .</p>
+  </div>
+  <div class="col-xs-8">
+    <p>Click here for help</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4">
+    <p>{{albums.length}} albums</p>
+    <p>{{selectedCount}} photos selected</p>
+  </div>
+  <div class="col-xs-4">
+    <p><a ng-click="saveSelections()">Save Selections</a></p>
+  </div>
+  <div class="col-xs-4">
+    <p>Finished selecting</p>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+	  <div ng-repeat="album in albums">
+	  	<div class="row">
+	  		<div class="col-xs-5" ng-class="{ 'selected' : album.selected }" ng-click="itemClicked()">
+	      	<img ng-src="{{album.HighlightURL}}" />
+      	</div>
+      	<div class="col-xs-7">
+      		<p>{{album.Title}}</p>
+      		<p>{{album.ImageCount}} {icon} all</p>
+          <p><a ng-href="/create/thumbnails/{{album.id}}">Select images for album</a></p>
+    		</div>
+	  	</div>
+		</div>
+	</div>
+</div>
