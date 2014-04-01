@@ -11,7 +11,8 @@
     "ejs": "~0.8.4",
     "oauth": "^0.9.11",
     "passport-smugmug": "^0.1.2",
-    "request": "^2.34.0"
+    "request": "^2.34.0",
+    "connect-livereload": "^0.3.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
