@@ -1,4 +1,32 @@
 <div ng-include="'partials/navbar.html'"></div>
+<style>
+  .progress-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+  }
+
+  .progress-overlay .progress {
+    position: relative;
+    top: 50%;
+    z-index: 200;
+    width: 50%;
+    left: 25%;
+  }
+</style>
+
+<div class="progress-overlay">
+  <div class="progress progress-striped active">
+    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+      <span class="">Loading Albums</span>
+    </div>
+  </div>
+</div>
 
 <div class="create">
 <div class="row">
@@ -22,10 +50,7 @@
 <div class="row">
   <div class="col-xs-4">
     <p>{{albums.length}} albums</p>
-    <p>{{selectedCount}} photos selected</p>
-  </div>
-  <div class="col-xs-4">
-    <p><a ng-click="saveSelections()">Save Selections</a></p>
+    <p>{{stats.selectedImageCount}} photos selected</p>
   </div>
   <div class="col-xs-4">
     <p>Finished selecting</p>
@@ -33,18 +58,18 @@
 </div>
 
 <div class="row">
-	<div class="col-xs-12">
-	  <div ng-repeat="album in albums">
-	  	<div class="row">
-	  		<div class="col-xs-5" ng-class="{ 'selected' : album.selected }" ng-click="itemClicked()">
-	      	<img ng-src="{{album.HighlightURL}}">
-      	</div>
-      	<div class="col-xs-7">
-      		<p>{{album.Title}}</p>
-      		<p>{{album.ImageCount}} {icon} all</p>
-          <p><a ng-href="/create/thumbnails/{{album.id}}">Select images for album</a></p>
-    		</div>
-	  	</div>
-		</div>
+	<div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 col-xl-1" ng-repeat="album in albums">
+  	<div class="row">
+  		<div class="col-xs-12" ng-class="{ 'selected' : album.selected }" ng-click="itemClicked()">
+      	<img ng-src="{{album.Images[0].ThumbURL}}">
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-xs-12">
+    		<p>{{album.Title}}</p>
+    		<p ng-class="{ 'text-muted': !album.selected }">{{album.ImageCount}} <span class="glyphicon glyphicon-camera"></span> {{ stats.selectedImageCountByAlbum[$index] }}</p>
+        <p><a ng-href="/create-video-slideshow/select-photos-from/smugmug/select-thumbnails-for-album/{{album.id}}">Select images for album</a></p>
+  		</div>
+  	</div>
 	</div>
 </div></div>

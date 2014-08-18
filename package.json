@@ -12,7 +12,9 @@
     "oauth": "^0.9.11",
     "passport-smugmug": "^0.1.2",
     "request": "^2.34.0",
-    "connect-livereload": "^0.3.2"
+    "image-min": "^0.1.3",
+    "grunt-google-cdn": "^0.2.2",
+    "bower": "^1.3.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -61,7 +63,8 @@
     "grunt-env": "~0.4.1",
     "grunt-node-inspector": "~0.1.3",
     "grunt-nodemon": "~0.2.0",
-    "open": "~0.0.4"
+    "open": "~0.0.4",
+    "grunt-contrib-less": "^0.11.3"
   },
   "engines": {
     "node": ">=0.10.0"
